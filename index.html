@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            li > button {
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="counter">You won <span class="done">0</span> out of <span class="created">0</span> tasks!</div>
+            <input type="text">
+            <button class="send">add</button>
+            <ul>tododododo:
+            </ul>
+        </div>
+
+        <script>
+            let numberOfTasksDone = 0;
+            let numberOfTasksCreated = 0;
+            let tasksDone = document.querySelector(".done");
+            let tasksCreated = document.querySelector(".created");
+
+            const sendButton = document.querySelector(".send");
+            sendButton.addEventListener("click", addListItem);
+
+            function addListItem() {
+                const inputForm = document.querySelector("input");
+                const list = document.querySelector("ul");
+                const listItem = document.createElement("li");
+                const listItemSpan = document.createElement("span");
+                listItemSpan.textContent = inputForm.value;
+                listItem.appendChild(listItemSpan);
+
+                const deleteItemButton = document.createElement("button");
+            deleteItemButton.textContent = "delete";
+                listItem.appendChild(deleteItemButton);
+                deleteItemButton.addEventListener("click", deleteItem);
+                list.appendChild(listItem);
+
+                numberOfTasksCreated++;
+                tasksCreated.textContent = numberOfTasksCreated;
+
+                inputForm.value = "";
+                inputForm.focus();
+            }
+            
+            function deleteItem() {
+                this.parentNode.remove();
+                numberOfTasksDone++;
+                tasksDone.textContent = numberOfTasksDone;
+            }
+
+        </script>
+    </body>
+</html>
