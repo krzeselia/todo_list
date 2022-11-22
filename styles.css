@@ -1,0 +1,63 @@
+body {
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.wrapper {
+    /* border: 1px solid black; */
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    width: 20em;
+    height: 1.5em;
+    font-size: 18px;
+}
+
+form > button {
+    font-size: 18px;
+    width: 3em;
+}
+
+ul {
+    width: 25em;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+li > button {
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 2em;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding-bottom: 5px;
+}
+
+li:not(.finishedtask) {
+    order: 1;
+}
+
+.finishedtask {
+    order: 100;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.finishedtask:first-of-type {
+    margin-top: 1em;
+}
