@@ -1,27 +1,36 @@
 :root {
-    --clr-dark: #1D3557;
+    --background-clr: #ddeee2;
+    --wrap-background-clr: #519e67;
+    --heading-clr: #F1FAEE;
+    --newtask-clr: #ddeee2;
+    --newtask-txt: rgba(0,0,0,.8);
+    --finished-task-clr: rgba(221,238,226,.6);
 }
 
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: var(--clr-dark);
+    background-color: var(--background-clr);
     padding: 10px;
 }
 
-.wrap, .tasklists_wrap {
+.wrap {
     border-radius: 10px;
+    background-color: var(--wrap-background-clr);
+    padding: 20px;
+    min-width: 380px;
 }
 
-.wrap {
-    background-color: #457B9D;
-    padding: 20px;
+.wrap:last-of-type {
+    margin-top: 20px;
 }
 
 .counter {
-    color: #F1FAEE;
+    color: var(--heading-clr);
     text-align: center;
     padding-bottom: 10px;
 }
@@ -44,24 +53,25 @@ form > button {
     width: 3em;
 }
 
-.tasklists_wrap {
-    background-color: #A8DADC;
-    margin-top: 20px;
-}
-
 ul {
     width: 20em;
     min-height: 3em;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-ul > span {
-    color: rgba(0,0,0,.9);
+h1 {
+    color: var(--heading-clr);
+    font-size: 2em;
+    margin: 0;
     text-align: center;
+}
+
+h1:last-of-type {
+    margin-top: 20px;
 }
 
 li {
@@ -74,8 +84,8 @@ li {
 }
 
 .list_unfinished > li {
-    background-color: #F1FAEE;
-    color: var(--clr-dark);
+    background-color: var(--newtask-clr);
+    color: var(--newtask-txt);
 }
 
 li > button {
@@ -105,31 +115,20 @@ li > button:last-of-type {
 .list_finished > li {
     text-decoration: line-through;
     color: gray;
-    background-color: #97C4C6;
+    background-color: var(--finished-task-clr);
 }
 
 ul.list_finished button {
     display: none;
 }
 
-.list_unfinished::after {
-    position: absolute;
-    margin-top: 30px;
-    content: "You have nothing to do";
+.flavortext {
+    margin: 15px;
     text-align: center;
     color: rgba(0,0,0,.3);
-    height: 1.4em;
-    padding: 5px;
-    z-index: 1;
+    font-size: 1.5em;
 }
 
-.list_finished::after {
-    position: absolute;
-    margin-top: 30px;
-    content: "You have yet to achieve anything";
-    text-align: center;
-    color: rgba(0,0,0,.3);
-    height: 1.4em;
-    padding: 5px;
-    z-index: 1;
+.hidden {
+    display: none;
 }

@@ -12,68 +12,18 @@
             <input type="text" placeholder="Write your task here">
             <button type="submit" class="send">add</button>
         </form>
-        <div class="tasklists_wrap">
-            <ul class="list_unfinished">
-                <span>tododododo:</span>
-            </ul>
+    </div>
+    <div class="wrap">
+        <h1>tododododo:</h1>
+        <div class="flavortext">You have nothing to do.</div>
+        <ul class="list_unfinished hidden"></ul>
 
-            <ul class="list_finished">
-                <span>finished tasks:</span>
-            </ul>
-        </div>
+        <h1>finished tasks:</h1>
+        <div class="flavortext">Finish a task!</div>
+        <ul class="list_finished hidden"></ul>
     </div>
 
-    <script>
-        let numberOfTasksDone = 0;
-        let numberOfTasksCreated = 0;
-        let tasksDone = document.querySelector(".done");
-        let tasksCreated = document.querySelector(".created");
-
-        document.querySelector("form").addEventListener("submit", addTask);
-
-        function addTask() {
-            event.preventDefault();
-
-            // create a new task
-            const inputForm = document.querySelector("input");
-            const list = document.querySelector(".list_unfinished");
-            const task = document.createElement("li");
-            const taskSpan = document.createElement("span");
-            taskSpan.textContent = inputForm.value;
-            task.appendChild(taskSpan);
-
-            // create the buttons
-            const button1 = document.createElement("button");
-            task.appendChild(button1);
-            button1.addEventListener("click", finishTask);
-            const button2 = document.createElement("button");
-            task.appendChild(button2);
-            button2.addEventListener("click", deleteTask);
-
-            list.appendChild(task);
-
-            numberOfTasksCreated++;
-            tasksCreated.textContent = numberOfTasksCreated;
-
-            inputForm.value = "";
-            inputForm.focus();
-        }
-
-        function finishTask() {
-            const listFinished = document.querySelector(".list_finished");
-            listFinished.appendChild(this.parentNode);
-
-            numberOfTasksDone++;
-            tasksDone.textContent = numberOfTasksDone;
-        }
-
-        function deleteTask() {
-            this.parentNode.remove();
-            numberOfTasksCreated--;
-            tasksCreated.textContent = numberOfTasksCreated;
-        }
-
-    </script>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
