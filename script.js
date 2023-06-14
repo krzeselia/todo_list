@@ -5,8 +5,8 @@ let tasksCreated = document.querySelector(".created");
 
 const list = document.querySelector(".list_unfinished");
 const listFinished = document.querySelector(".list_finished");
-const flavorText1 = document.querySelector(".flavortext:first-of-type");
-const flavorText2 = document.querySelector(".flavortext:last-of-type");
+const flavorText1 = document.querySelector(".flavortext1");
+const flavorText2 = document.querySelector(".flavortext2");
 
 document.querySelector("form").addEventListener("submit", addTask);
 

@@ -1,5 +1,6 @@
 :root {
     --background-clr: #ddeee2;
+    --first-wrap-clr: #437e54;
     --wrap-background-clr: #519e67;
     --heading-clr: #F1FAEE;
     --newtask-clr: #ddeee2;
@@ -22,11 +23,14 @@ body {
     border-radius: 10px;
     background-color: var(--wrap-background-clr);
     padding: 20px;
+    margin-top: 20px;
     min-width: 380px;
 }
 
-.wrap:last-of-type {
-    margin-top: 20px;
+.wrap:first-of-type {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background-color: var(--first-wrap-clr);
 }
 
 .counter {
@@ -122,7 +126,7 @@ ul.list_finished button {
     display: none;
 }
 
-.flavortext {
+.flavortext1, .flavortext2 {
     margin: 15px;
     text-align: center;
     color: rgba(0,0,0,.3);
@@ -131,4 +135,8 @@ ul.list_finished button {
 
 .hidden {
     display: none;
+}
+
+.bered {
+    color: red;
 }
